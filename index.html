@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VibeFlow — Digital Banking</title>
+    <link rel="icon" href="/favicon.ico" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --nav-height: 72px;
+        }
+
+        .hero-min {
+            min-height: calc(100vh - var(--nav-height));
+        }
+
+        .nav-transition {
+            transition: background-color 0.25s, box-shadow 0.25s;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 1rem;
+            transition: transform 0.45s ease;
+        }
+
+        /* hide scrollbar in some browsers */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="antialiased text-slate-900">
+    <!-- NAVBAR -->
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 nav-transition">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="h-[var(--nav-height)] flex items-center justify-between">
+                <a href="#hero" class="flex items-center gap-3 smooth-scroll">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-pink-500 rounded-md flex items-center justify-center text-white font-bold">
+                        V
+                    </div>
+                    <span class="font-semibold text-lg">VibeFlow</span>
+                </a>
+                <!-- Desktop nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="nav-link smooth-scroll" href="#why">Why VibeFlow</a>
+                    <a class="nav-link smooth-scroll" href="#pricing">Pricing</a>
+                    <a class="nav-link smooth-scroll" href="#testimonials">Testimonials</a>
+                    <a class="nav-link smooth-scroll" href="#contact">Contact</a>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="btn-outline">Login</a>
+                        <a href="#pricing" class="btn-primary">Get Started</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="hamburger" aria-label="Open menu"
+                        class="p-2 rounded-md focus:outline-none focus:ring-2">
+                        <svg id="hamburger-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="hamburger-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile menu panel -->
+        <div id="mobile-panel" class="md:hidden bg-white/95 backdrop-blur-sm border-t border-slate-200 hidden">
+            <div class="px-4 py-6 flex flex-col gap-4">
+                <a class="smooth-scroll text-lg font-medium" href="#why">Why VibeFlow</a>
+                <a class="smooth-scroll text-lg font-medium" href="#pricing">Pricing</a>
+                <a class="smooth-scroll text-lg font-medium" href="#testimonials">Testimonials</a>
+                <a class="smooth-scroll text-lg font-medium" href="#contact">Contact</a>
+                <div class="flex gap-3 mt-2">
+                    <a href="#" class="btn-outline w-full text-center">Login</a>
+                    <a href="#pricing" class="btn-primary w-full text-center">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="hero"
+            class="hero-min flex items-center justify-center text-center bg-gradient-to-br from-sky-50 via-white to-rose-50">
+            <div class="max-w-4xl px-6 py-16">
+                <h1 class="text-6xl md:text-7xl font-extrabold leading-tight mb-6">Digital Banking for Every Cambodian
+                </h1>
+                <p class="text-xl md:text-2xl mb-8">Smart services. Real support. All in one app made for you.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#pricing" class="btn-primary btn-xl smooth-scroll">Get Started</a>
+                    <a href="#why" class="btn-secondary btn-xl smooth-scroll">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY VIBEFLOW (GRID) -->
+        <section id="why" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8">Why VibeFlow</h2>
+                <p class="text-center text-slate-600 max-w-2xl mx-auto mb-12">Built for speed, trust, and simple
+                    experiences across devices.</p>
+                <!-- Grid: must use CSS Grid -->
+                <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Card 1 -->
+                    <article class="p-6 border rounded-lg shadow-sm flex flex-col">
+                        <img src="/assets/images/feature-1.avif" alt="Fast Transfers"
+                            class="h-40 w-full object-cover rounded-md mb-4">
+                        <h3 class="font-semibold text-xl mb-2">Fast Transfers</h3>
+                        <p class="text-slate-600 flex-1">Send money instantly to anyone in Cambodia with minimal fees
+                            and secure verification.</p>
+                    </article>
+                    <!-- Card 2 -->
+                    <article class="p-6 border rounded-lg shadow-sm flex flex-col">
+                        <img src="/assets/images/feature-2.avif" alt="Smart Budgets"
+                            class="h-40 w-full object-cover rounded-md mb-4">
+                        <h3 class="font-semibold text-xl mb-2">Smart Budgets</h3>
+                        <p class="text-slate-600 flex-1">Automatic categorization and insights to help you save more
+                            every month.</p>
+                    </article>
+                    <!-- Card 3 -->
+                    <article class="p-6 border rounded-lg shadow-sm flex flex-col">
+                        <img src="/assets/images/feature-3.avif" alt="Support 24/7"
+                            class="h-40 w-full object-cover rounded-md mb-4">
+                        <h3 class="font-semibold text-xl mb-2">Real Support</h3>
+                        <p class="text-slate-600 flex-1">In-app chat with knowledgeable agents and easy escalation when
+                            you need it.</p>
+                    </article>
+                    <!-- Card 4 -->
+                    <article class="p-6 border rounded-lg shadow-sm flex flex-col">
+                        <img src="/assets/images/feature-4.avif" alt="Support 24/7"
+                            class="h-40 w-full object-cover rounded-md mb-4">
+                        <h3 class="font-semibold text-xl mb-2">Secure Cards</h3>
+                        <p class="text-slate-600 flex-1">Virtual and physical cards with instant lock/unlock and
+                            spending limits.</p>
+                    </article>
+                    <!-- Card 5 -->
+                    <article class="p-6 border rounded-lg shadow-sm flex flex-col">
+                        <img src="/assets/images/feature-5.avif" alt="Support 24/7"
+                            class="h-40 w-full object-cover rounded-md mb-4">
+                        <h3 class="font-semibold text-xl mb-2">Investments</h3>
+                        <p class="text-slate-600 flex-1">Micro-investment options so anyone can start building wealth.
+                        </p>
+                    </article>
+                    <!-- Card 6 -->
+                    <article class="p-6 border rounded-lg shadow-sm flex flex-col">
+                        <img src="/assets/images/feature-6.avif" alt="Support 24/7"
+                            class="h-40 w-full object-cover rounded-md mb-4">
+                        <h3 class="font-semibold text-xl mb-2">Local Touch</h3>
+                        <p class="text-slate-600 flex-1">Khmer language support, localized offers, and partnerships
+                            across Cambodia.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section id="pricing" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-6">Pricing</h2>
+                <p class="text-center text-slate-600 mb-10">Simple pricing for individuals and families.</p>
+                <!-- Pricing layout uses flexbox -->
+                <div class="flex flex-col lg:flex-row gap-6 items-stretch">
+                    <!-- Free -->
+                    <div class="flex-1 border rounded-lg p-8 bg-white flex flex-col">
+                        <h3 class="text-xl font-semibold mb-4">Free</h3>
+                        <p class="text-4xl font-extrabold mb-4">$0 <span class="text-base font-medium">/mo</span></p>
+                        <ul class="mb-6 space-y-2 text-slate-600 flex-1">
+                            <li>Basic transfers</li>
+                            <li>1 virtual card</li>
+                            <li>Standard support</li>
+                        </ul>
+                        <a href="#" class="btn-outline mt-auto">Get Free</a>
+                    </div>
+                    <!-- Premium Individual -->
+                    <div class="flex-1 border-2 border-indigo-500 rounded-lg p-8 bg-white flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-semibold mb-4">Premium Individual</h3>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Popular</span>
+                        </div>
+                        <p class="text-5xl font-extrabold mb-4">$7 <span class="text-base font-medium">/mo</span></p>
+                        <ul class="mb-6 space-y-2 text-slate-600 flex-1">
+                            <li>Unlimited transfers</li>
+                            <li>3 virtual cards + 1 physical</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <a href="#" class="btn-primary mt-auto">Choose Premium</a>
+                    </div>
+                    <!-- Family -->
+                    <div class="flex-1 border rounded-lg p-8 bg-white flex flex-col">
+                        <h3 class="text-xl font-semibold mb-4">Family</h3>
+                        <p class="text-4xl font-extrabold mb-4">$12 <span class="text-base font-medium">/mo</span></p>
+                        <ul class="mb-6 space-y-2 text-slate-600 flex-1">
+                            <li>Shared allowance</li>
+                            <li>Up to 6 accounts</li>
+                            <li>Family controls</li>
+                        </ul>
+                        <a href="#" class="btn-outline mt-auto">Start Family</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS (carousel) -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-6">What our users say</h2>
+                <p class="text-center text-slate-600 mb-8">Real stories from our customers.</p>
+                <div class="relative">
+                    <button id="prev"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hidden md:block"
+                        aria-label="Previous">
+                        &#10094;
+                    </button>
+                    <button id="next"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hidden md:block"
+                        aria-label="Next">
+                        &#10095;
+                    </button>
+                    <div id="carousel" class="overflow-hidden">
+                        <div class="carousel-track">
+                            <!-- Testimonial 1 -->
+                            <figure class="p-6 border rounded-lg min-w-[280px] max-w-xl">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <img src="/assets/images/profile-1.avif" alt="User 1"
+                                        class="w-14 h-14 rounded-full object-cover">
+                                    <div>
+                                        <strong>Somnang P.</strong>
+                                        <div class="text-sm text-slate-500">Phnom Penh</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-slate-700">"VibeFlow made sending money to my family so fast and
+                                    easy — I love the local support."</blockquote>
+                            </figure>
+                            <!-- Testimonial 2 -->
+                            <figure class="p-6 border rounded-lg min-w-[280px] max-w-xl">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <img src="/assets/images/profile-2.avif" alt="User 2"
+                                        class="w-14 h-14 rounded-full object-cover">
+                                    <div>
+                                        <strong>Sreyneang K.</strong>
+                                        <div class="text-sm text-slate-500">Siem Reap</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-slate-700">"Customer support answered quickly and helped me get
+                                    my card replaced the same day."</blockquote>
+                            </figure>
+                            <!-- Testimonial 3 -->
+                            <figure class="p-6 border rounded-lg min-w-[280px] max-w-xl">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <img src="/assets/images/profile-3.avif" alt="User 3"
+                                        class="w-14 h-14 rounded-full object-cover">
+                                    <div>
+                                        <strong>Rithy V.</strong>
+                                        <div class="text-sm text-slate-500">Kampong Cham</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-slate-700">"Our family plan saved us time managing allowances
+                                    for the kids — highly recommended."</blockquote>
+                            </figure>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="contact" class="bg-slate-900 text-slate-100 py-12">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-semibold mb-3">VibeFlow</h4>
+                    <p class="text-slate-400">Digital Banking for Every Cambodian. Smart services. Real support.</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-3">Navigation</h5>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#hero" class="smooth-scroll">Home</a></li>
+                        <li><a href="#why" class="smooth-scroll">Why VibeFlow</a></li>
+                        <li><a href="#pricing" class="smooth-scroll">Pricing</a></li>
+                        <li><a href="#testimonials" class="smooth-scroll">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-3">Follow us</h5>
+                    <div class="flex gap-3 mb-4">
+                        <a aria-label="Twitter" href="#" class="p-2 rounded-md bg-slate-800 hover:bg-slate-700">T</a>
+                        <a aria-label="Facebook" href="#" class="p-2 rounded-md bg-slate-800 hover:bg-slate-700">F</a>
+                        <a aria-label="Instagram" href="#" class="p-2 rounded-md bg-slate-800 hover:bg-slate-700">I</a>
+                    </div>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Email" class="px-3 py-2 rounded-md text-slate-900 flex-1" />
+                        <button class="px-4 py-2 rounded-md bg-indigo-600">Sign</button>
+                    </form>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 mt-10 border-t border-slate-800 pt-6 text-slate-400 text-sm text-center">
+                © <span id="year"></span> VibeFlow</div>
+        </footer>
+    </main>
+
+    <!-- Tailwind-like utility buttons (small helpers) -->
+    <style>
+        .btn-primary {
+            @apply inline-block bg-indigo-600 text-white px-5 py-2 rounded-md shadow hover:brightness-105 focus:outline-none focus:ring-2;
+        }
+
+        .btn-secondary {
+            @apply inline-block border border-indigo-600 text-indigo-600 px-5 py-2 rounded-md hover:bg-indigo-50;
+        }
+
+        .btn-outline {
+            @apply inline-block border border-slate-300 text-slate-700 px-4 py-2 rounded-md hover:bg-slate-50;
+        }
+
+        .btn-xl {
+            @apply text-lg px-6 py-3;
+        }
+
+        .nav-link {
+            @apply text-slate-700 hover:text-indigo-600;
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script>
+        // Small helpers
+        const header = document.getElementById('site-header');
+        const hamburger = document.getElementById('hamburger');
+        const mobilePanel = document.getElementById('mobile-panel');
+        const hamOpen = document.getElementById('hamburger-open');
+        const hamClose = document.getElementById('hamburger-close');
+        // Toggle mobile menu
+        hamburger.addEventListener('click', () => {
+            const open = mobilePanel.classList.toggle('hidden');
+            // when hidden = true means closed, so invert icons
+            if (mobilePanel.classList.contains('hidden')) {
+                hamOpen.classList.remove('hidden'); hamClose.classList.add('hidden');
+            } else { hamOpen.classList.add('hidden'); hamClose.classList.remove('hidden'); }
+        });
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('bg-white/90', 'backdrop-blur-sm', 'shadow-sm');
+            } else {
+                header.classList.remove('bg-white/90', 'backdrop-blur-sm', 'shadow-sm');
+            }
+        });
+        // Smooth scroll for links with class 'smooth-scroll'
+        document.querySelectorAll('.smooth-scroll').forEach(a => {
+            a.addEventListener('click', (e) => {
+                const href = a.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // close mobile menu if open
+                    if (!mobilePanel.classList.contains('hidden')) { mobilePanel.classList.add('hidden'); hamOpen.classList.remove('hidden'); hamClose.classList.add('hidden'); }
+                }
+            });
+        });
+        // Testimonials carousel logic
+        const track = document.querySelector('.carousel-track');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+        const dots = document.querySelectorAll('.dot');
+        let index = 0;
+        const slides = Array.from(track.children);
+
+        function updateCarousel() {
+            const slideWidth = slides[0].getBoundingClientRect().width + 16; // gap ~1rem
+            track.style.transform = `translateX(${-index * slideWidth}px)`;
+            dots.forEach(d => d.classList.remove('bg-indigo-600'));
+            if (dots[index]) dots[index].classList.add('bg-indigo-600');
+        }
+
+        nextBtn && nextBtn.addEventListener('click', () => { index = Math.min(index + 1, slides.length - 1); updateCarousel(); });
+        prevBtn && prevBtn.addEventListener('click', () => { index = Math.max(index - 1, 0); updateCarousel(); });
+        dots.forEach(d => d.addEventListener('click', () => { index = Number(d.dataset.index); updateCarousel(); }));
+
+        // make carousel responsive so mobile shows one card centered
+        window.addEventListener('resize', () => updateCarousel());
+        // init
+        updateCarousel();
+
+        // set year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // subtle: ensure focus states for accessibility when keyboard navigating
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // close mobile
+                if (!mobilePanel.classList.contains('hidden')) { mobilePanel.classList.add('hidden'); hamOpen.classList.remove('hidden'); hamClose.classList.add('hidden'); }
+            }
+        });
+    </script>
+</body>
+
+</html>
